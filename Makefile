@@ -1,9 +1,9 @@
 SRCS	= ft_printf.c \
-			ft_print_char.c \
-			ft_print_pointer.c \
-			ft_print_string.c \
-			ft_print_unbr.c \
-			ft_tohex.c
+			formats/ft_print_char.c \
+			formats/ft_print_pointer.c \
+			formats/ft_print_string.c \
+			formats/ft_print_unbr.c \
+			formats/ft_tohex.c
 
 OBJS	= ${SRCS:.c=.o}
 

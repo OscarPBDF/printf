@@ -6,13 +6,13 @@
 /*   By: operez-d <operez-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 11:11:22 by operez-d          #+#    #+#             */
-/*   Updated: 2022/11/14 10:38:23 by operez-d         ###   ########.fr       */
+/*   Updated: 2022/11/14 14:37:33 by operez-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void ft_print_string(char *s)
+int ft_print_string(char *s)
 {
 	int	i;
 
@@ -22,4 +22,5 @@ void ft_print_string(char *s)
 		write(1, &s[i], 1);
 		i++;
 	}
+	return (i);
 }

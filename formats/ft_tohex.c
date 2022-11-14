@@ -12,10 +12,9 @@
 
 #include <unistd.h>
 #include <stdlib.h>
-#include "ft_printf.h"
-#include "libft/libft.h"
+#include "../libft/libft.h"
 
-static int	ft_charhex(int hex)
+/*static int	ft_charhex(int hex)
 {
 	if(hex == 10)
 		return('A');
@@ -30,7 +29,7 @@ static int	ft_charhex(int hex)
 	else if(hex == 15)
 		return('F');
 	return (hex + '0');
-}
+}*/
 
 static int	ft_sizehex(int dec)
 {
@@ -45,29 +44,28 @@ static int	ft_sizehex(int dec)
 		size++;
 	return(size);
 }
-
-char	*ft_tohex(int dec, char format)
+//Termminar de reestructurar la funcion 
+int	ft_tohex(int dec, char *base)
 {
-	char	*hex;
 	int		size;
 	int		i;
+	int		alphanum;
 
 	size = ft_sizehex(dec);
-	hex = malloc((size + 1) * sizeof(char)); /////
-	hex[size--] = '\0';						///////////
-	while(dec/16 > 0)
+	while(dec > 16)
 	{
-		hex[size] = ft_charhex(dec%16);
-		size--;
+		alphanum = dec%16;
+		write(1, &base[alphanum], 1);
 		dec /= 16;
 	}
-	hex[size--] =  ft_charhex(dec%16);
+	alphanum = dec%16;
+	write(1, &base[alphanum], 1); //Lo muestra al reves
 	i = 0;
-	if(format == 'x')
-		while(hex[i])
-		{
-			ft_tolower(hex[i])
-			i++;
-		}
-	return (hex);
+	return (size);
+}
+
+int	main()
+{	
+	ft_tohex(123, "0123456789ABCDEF");
+
 }
