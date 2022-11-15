@@ -6,7 +6,7 @@
 /*   By: operez-d <operez-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 12:46:55 by operez-d          #+#    #+#             */
-/*   Updated: 2022/11/14 15:30:25 by operez-d         ###   ########.fr       */
+/*   Updated: 2022/11/15 15:43:09 by operez-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static void	ft_printnbr(int n)
 	write(1, &n, 1);
 }
 
-int	*ft_print_unbr(int nb)
+int	ft_print_unbr(int nb)
 {
 	int	len;
 	
@@ -49,8 +49,8 @@ int	*ft_print_unbr(int nb)
 		ft_printnbr(nb);
 	if (nb >= 10)
 	{
-		ft_putnbr(nb / 10);
-		ft_putnbr(nb % 10);
+		ft_print_unbr(nb / 10);
+		ft_print_unbr(nb % 10);
 	}
 	return (len);
 }

@@ -6,7 +6,7 @@
 /*   By: operez-d <operez-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 12:46:55 by operez-d          #+#    #+#             */
-/*   Updated: 2022/11/14 15:30:49 by operez-d         ###   ########.fr       */
+/*   Updated: 2022/11/15 15:52:56 by operez-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,9 @@ static void	ft_printnbr(int n)
 
 int	ft_print_nbr(int nb)
 {
+	int	len;
+
+	len = ft_nbrsize(nb);
 	if (nb == -2147483648)
 	{
 		write(1, "-2147483648", 11);
@@ -51,7 +54,8 @@ int	ft_print_nbr(int nb)
 		ft_printnbr(nb);
 	if (nb >= 10)
 	{
-		ft_putnbr(nb / 10);
-		ft_putnbr(nb % 10);
+		ft_print_nbr(nb / 10);
+		ft_print_nbr(nb % 10);
 	}
+	return (len);
 }

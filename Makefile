@@ -2,6 +2,7 @@ SRCS	= ft_printf.c \
 			formats/ft_print_char.c \
 			formats/ft_print_pointer.c \
 			formats/ft_print_string.c \
+			formats/ft_print_nbr.c \
 			formats/ft_print_unbr.c \
 			formats/ft_tohex.c
 
