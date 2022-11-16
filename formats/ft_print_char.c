@@ -6,13 +6,13 @@
 /*   By: operez-d <operez-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 11:11:22 by operez-d          #+#    #+#             */
-/*   Updated: 2022/11/14 15:12:02 by operez-d         ###   ########.fr       */
+/*   Updated: 2022/11/16 10:59:50 by operez-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int ft_print_char(int c)
+int	ft_print_char(int c)
 {
 	write(1, &c, 1);
 	return (1);

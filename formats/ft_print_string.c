@@ -6,18 +6,24 @@
 /*   By: operez-d <operez-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 11:11:22 by operez-d          #+#    #+#             */
-/*   Updated: 2022/11/14 14:37:33 by operez-d         ###   ########.fr       */
+/*   Updated: 2022/11/16 14:49:01 by operez-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int ft_print_string(char *s)
+
+int	ft_print_string(char *s)
 {
 	int	i;
 
 	i = 0;
-	while(s[i])
+	if(!s)
+	{
+		write(1, "(null)", 6);
+		return (6);
+	}
+	while (s[i])
 	{
 		write(1, &s[i], 1);
 		i++;

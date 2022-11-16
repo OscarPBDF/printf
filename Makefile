@@ -10,10 +10,6 @@ OBJS	= ${SRCS:.c=.o}
 
 NAME	= libftprintf.a
 
-DIR_L	= libft
-
-LIBFT	= libft.a
-
 CC		= gcc
 
 CFLAGS 	= -Wall -Werror -Wextra
@@ -23,14 +19,13 @@ RM		= rm -rf
 all:		${NAME}
 
 ${NAME}:	${OBJS}
-			make -C $(DIR_L)
-			$(CC) $(DIR_L)/$(LIBFT) ${OBJS} -o ${NAME} 
+			ar -rsc ${NAME} ${OBJS} 
 
 clean:
-			${RM} ${OBJS} && cd $(DIR_L) && make clean
+			${RM} ${OBJS}
 
 fclean:		clean
-			${RM} ${NAME} && cd $(DIR_L) && make fclean
+			${RM} ${NAME}
 
 re:			fclean all
 

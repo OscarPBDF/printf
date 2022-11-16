@@ -6,7 +6,7 @@
 /*   By: operez-d <operez-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 12:46:55 by operez-d          #+#    #+#             */
-/*   Updated: 2022/11/15 15:43:09 by operez-d         ###   ########.fr       */
+/*   Updated: 2022/11/16 11:06:01 by operez-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ static void	ft_printnbr(int n)
 int	ft_print_unbr(int nb)
 {
 	int	len;
-	
+
 	if (nb < 0)
 		nb = -nb;
 	len = ft_nbrsize(nb);
