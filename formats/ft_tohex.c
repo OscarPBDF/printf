@@ -6,7 +6,7 @@
 /*   By: operez-d <operez-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 11:28:11 by operez-d          #+#    #+#             */
-/*   Updated: 2022/11/16 14:54:58 by operez-d         ###   ########.fr       */
+/*   Updated: 2022/11/17 14:21:54 by operez-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,16 +30,18 @@ static int	ft_sizehex(unsigned int dec)
 
 int	ft_tohex(unsigned int dec, char *base)
 {
-	int		size;
+	int	size;
 
-	size = ft_sizehex(dec);
+	if (dec == 0)
+		return (write(1, "0", 1));
 	if (dec < 16)
 		write(1, &base[dec], 1);
-	if (dec >= 16)
+	else
 	{
 		ft_tohex((dec / 16), base);
 		ft_tohex((dec % 16), base);
 	}
+	size = ft_sizehex(dec);
 	return (size);
 }
 /*

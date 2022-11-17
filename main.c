@@ -17,8 +17,8 @@ int	main()
 	u = -42;
 
 	//int total;
-	printf("%d\n", printf("%p ", -2147483648));
-	printf("%d\n", ft_printf("%p ", -2147483648));
+	printf(" %0d ", 10);
+	//printf("%d\n", ft_printf(" %x ", __LONG_MAX__));
 	//total = suma(4, 2, 1, 1, 1);
 	//printf("%d----", total);
 }

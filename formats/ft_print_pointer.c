@@ -6,14 +6,14 @@
 /*   By: operez-d <operez-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 11:19:18 by operez-d          #+#    #+#             */
-/*   Updated: 2022/11/16 16:54:06 by operez-d         ###   ########.fr       */
+/*   Updated: 2022/11/17 14:20:17 by operez-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include <stdio.h>
 
-static int	ft_sizehex(unsigned int dec)
+static int	ft_sizehex(unsigned long dec)
 {
 	int	size;
 
@@ -32,7 +32,6 @@ static int	ft_tolonghex(unsigned long dec, char *base)
 {
 	int	size;
 
-	size = ft_sizehex(dec);
 	if (dec < 16)
 		write(1, &base[dec], 1);
 	else
@@ -40,6 +39,7 @@ static int	ft_tolonghex(unsigned long dec, char *base)
 		ft_tolonghex((dec / 16), base);
 		ft_tolonghex((dec % 16), base);
 	}
+	size = ft_sizehex(dec);
 	return (size);
 }
 

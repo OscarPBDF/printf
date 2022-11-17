@@ -6,7 +6,7 @@
 /*   By: operez-d <operez-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 14:27:13 by operez-d          #+#    #+#             */
-/*   Updated: 2022/11/16 13:38:41 by operez-d         ###   ########.fr       */
+/*   Updated: 2022/11/17 14:15:08 by operez-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,13 @@ static int	ft_formats(va_list args, char const conver)
 	else if (conver == 'p')
 		return (ft_print_pointer(va_arg(args, unsigned long *)));
 	else if (conver == 'd' || conver == 'i')
-		return (ft_print_nbr(va_arg(args, int)));
+		return (ft_print_nbr(va_arg(args, unsigned long)));
 	else if (conver == 'u')
-		return (ft_print_unbr(va_arg(args, int)));
+		return (ft_print_unbr(va_arg(args, unsigned int)));
 	else if (conver == 'X')
-		return (ft_tohex(va_arg(args, int), "0123456789ABCDEF"));
+		return (ft_tohex(va_arg(args, unsigned long), "0123456789ABCDEF"));
 	else if (conver == 'x')
-		return (ft_tohex(va_arg(args, int), "0123456789abcdef"));
+		return (ft_tohex(va_arg(args, unsigned long), "0123456789abcdef"));
 	else if (conver == '%')
 		return (write(1, "%%", 1));
 	return (0);

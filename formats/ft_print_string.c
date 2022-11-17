@@ -6,19 +6,18 @@
 /*   By: operez-d <operez-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 11:11:22 by operez-d          #+#    #+#             */
-/*   Updated: 2022/11/16 14:49:01 by operez-d         ###   ########.fr       */
+/*   Updated: 2022/11/17 14:21:47 by operez-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-
 
 int	ft_print_string(char *s)
 {
 	int	i;
 
 	i = 0;
-	if(!s)
+	if (!s)
 	{
 		write(1, "(null)", 6);
 		return (6);
